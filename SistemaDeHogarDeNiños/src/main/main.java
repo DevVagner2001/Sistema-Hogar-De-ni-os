@@ -19,6 +19,8 @@ public class main {
             JF_elmacho macho = new JF_elmacho();
             macho.setVisible(true);
         });
+        //jkdlahflkajfkljakfjakljfklajfkljadfkaljfkladjdfka
+        //jkldfjakldfjklajf
       
     }
         
