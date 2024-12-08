@@ -108,7 +108,7 @@ public class JF_elmacho extends javax.swing.JFrame {
             }
         });
     }
-
+//alcides estuvo aqui
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
