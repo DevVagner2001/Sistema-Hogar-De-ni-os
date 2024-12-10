@@ -9,6 +9,13 @@ package j_frame;
  * @author byvagner
  */
 import clases.*;
+import static j_frame.JF_Personal.jButtonModificar;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 
 public class JF_tutor extends javax.swing.JFrame {
 
@@ -19,7 +26,19 @@ public class JF_tutor extends javax.swing.JFrame {
 
    
     public JF_tutor() {
-        initComponents();       
+        initComponents();
+        
+        
+            customizeButton(jButtonEliminar);
+    customizeButton(jButtonGuardar);
+    customizeButton(jButtonModificar);
+    customizeButton(jButtonNuevo);
+    customizeButton(jButtonSeleID);
+    customizeButton(jButtonSeleccionar);
+    customizeButton(jButtonatras);
+    
+    
+    
         this.setLocationRelativeTo(null);
         t.MostrarJtableTI(jTabletutor);
         this.logear();
@@ -63,13 +82,20 @@ public class JF_tutor extends javax.swing.JFrame {
         jButtonSeleID = new javax.swing.JButton();
         jButtonatras = new javax.swing.JButton();
         jLabelRTexto = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("tutor");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
+        jLabel1.setBackground(new java.awt.Color(51, 255, 51));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel1.setText("TUTOR");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 140, 30));
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTabletutor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,7 +110,7 @@ public class JF_tutor extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabletutor);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 690, 140));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 690, 220));
 
         jButtonSeleccionar.setText("SELECCIONAR ");
         jButtonSeleccionar.addActionListener(new java.awt.event.ActionListener() {
@@ -92,39 +118,60 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonSeleccionarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 140, -1));
+        jPanel1.add(jButtonSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, 140, -1));
 
         jScrollPane2.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 505, 880, 10));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 880, 10));
 
-        jLabel2.setText("descripcion");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("DESCRIPCION");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jLabel3.setText("nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("NOMBRE");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
-        jLabel4.setText("apellido");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("APELLIDO");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
 
-        jLabel5.setText("sexo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("SEXO");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
-        jLabel6.setText("cel");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("CEL");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
-        jLabel7.setText("direccion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setText("DIRECCION");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
-        jLabel8.setText("id");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-        jPanel1.add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 70, -1));
-        jPanel1.add(jTextFieldNomvbre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 60, -1));
-        jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 80, -1));
-        jPanel1.add(jTextFieldsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 40, -1));
-        jPanel1.add(jTextFieldcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 90, -1));
-        jPanel1.add(jTextFieldiereccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 70, -1));
-        jPanel1.add(jTextFieldIDDD, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, -1));
+        jLabel8.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("ID");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 30, -1));
+        jPanel1.add(jTextFieldDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 90, -1));
+        jPanel1.add(jTextFieldNomvbre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 90, -1));
+        jPanel1.add(jTextFieldapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 90, -1));
+        jPanel1.add(jTextFieldsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 40, -1));
+        jPanel1.add(jTextFieldcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 90, -1));
+        jPanel1.add(jTextFieldiereccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 90, -1));
+
+        jTextFieldIDDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDDDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldIDDD, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 40, -1));
 
         jButtonNuevo.setText("nuevo");
         jButtonNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +179,7 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonNuevoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 80, -1));
+        jPanel1.add(jButtonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 90, -1));
 
         jButtonModifcar.setText("modificar");
         jButtonModifcar.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +187,7 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonModifcarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonModifcar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 90, -1));
+        jPanel1.add(jButtonModifcar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 90, -1));
 
         jButtonEliminar.setText("eliminar");
         jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +195,7 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 80, -1));
+        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 90, -1));
 
         jButtonGuardar.setText("guardar");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +203,7 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 90, -1));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 90, -1));
 
         jButtonSeleID.setText("SELECCIONAR ID ");
         jButtonSeleID.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +211,7 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonSeleIDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonSeleID, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 160, -1));
+        jPanel1.add(jButtonSeleID, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 160, -1));
 
         jButtonatras.setText("atras");
         jButtonatras.addActionListener(new java.awt.event.ActionListener() {
@@ -172,14 +219,32 @@ public class JF_tutor extends javax.swing.JFrame {
                 jButtonatrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonatras, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 440, 110, -1));
+        jPanel1.add(jButtonatras, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 550, 110, -1));
         jPanel1.add(jLabelRTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 290, 20));
+
+        jPanel2.setBackground(new java.awt.Color(80, 144, 175));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 230, 220));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6.jpeg"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 914, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,6 +284,60 @@ public class JF_tutor extends javax.swing.JFrame {
                 break;
         }
     }
+private void customizeButton(JButton button) {
+    button.setPreferredSize(new Dimension(200, 50));
+    button.setFocusPainted(false);
+    button.setBorderPainted(false);
+    button.setContentAreaFilled(false);
+    button.setOpaque(true); // Fondo no transparente
+
+    // Colores más fuertes
+    Color normalColor = new Color(100, 149, 237); // Azul claro fuerte
+    Color hoverColor = new Color(70, 130, 180); // Azul intermedio
+    Color pressColor = new Color(30, 60, 120); // Azul oscuro
+
+    // Establece el color inicial del fondo
+    button.setBackground(normalColor);
+    button.setForeground(Color.WHITE); // Texto en blanco
+    button.setFont(new Font("Arial", Font.BOLD, 16));
+
+    // Bordes redondeados usando 'setBorder' directamente
+    button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Borde negro
+
+    // Agregar efectos de cambio de color y sombra
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            // Efecto de cambio de color suave
+            button.setBackground(hoverColor); // Color cuando el cursor entra
+            button.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cambia el cursor
+
+            // Sombra dinámica
+            button.setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 3)); // Cambia el borde a más grueso
+        }
+
+        @Override
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            button.setBackground(normalColor); // Vuelve al color normal
+            button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Vuelve al borde normal
+        }
+
+        @Override
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            button.setBackground(pressColor); // Color cuando se presiona
+        }
+
+        @Override
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+            button.setBackground(hoverColor); // Vuelve al color de hover después de soltar
+        }
+    });
+}
+
+
+    
+    
+    
     private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
         // TODO add your handling code here:
        this.limpiar();
@@ -309,6 +428,10 @@ public class JF_tutor extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonatrasActionPerformed
 
+    private void jTextFieldIDDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDDDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDDDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -360,8 +483,10 @@ public class JF_tutor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     public static javax.swing.JLabel jLabelRTexto;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTabletutor;

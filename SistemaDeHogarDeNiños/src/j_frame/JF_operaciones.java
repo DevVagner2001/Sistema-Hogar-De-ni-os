@@ -9,6 +9,12 @@ package j_frame;
  * @author byvagner
  */
 import clases.Operaciones;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 
 public class JF_operaciones extends javax.swing.JFrame {
 
@@ -19,6 +25,18 @@ public class JF_operaciones extends javax.swing.JFrame {
     
     public JF_operaciones() {
         initComponents();
+        
+        
+      customizeButton(jButton1);
+      customizeButton(jButton2);
+      customizeButton(jButton3);
+      customizeButton(jButton4);
+      customizeButton(jButton5);
+      customizeButton(jButtonMostrar1);
+      customizeButton(jButtonmostrar);
+
+        
+        
         this.setLocationRelativeTo(null);
     }
 
@@ -32,7 +50,6 @@ public class JF_operaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldIDUE = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -55,15 +72,17 @@ public class JF_operaciones extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("operaciones");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
-
-        jLabel2.setText("buscar todos los niños que estudian en cierta unidad educativa  !");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Buscar todos los niños que estudian en cierta unidad educativa!");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jTextFieldIDUE.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +90,7 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jTextFieldIDUEActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldIDUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 80, -1));
+        jPanel1.add(jTextFieldIDUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 80, -1));
 
         jButton1.setText("ID UE ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +98,7 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 70, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 70, -1));
 
         jTableoperaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,7 +113,7 @@ public class JF_operaciones extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableoperaciones);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 480, 250));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 980, 20));
 
@@ -112,11 +131,13 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jButtonMostrar1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 120, -1));
+        jPanel1.add(jButtonMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 120, -1));
 
-        jLabel3.setText("mostrar Niños por medio de tutores ! ");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Mostrar Niños por medio de tutores! ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-        jPanel1.add(jTextFieldtutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 80, -1));
+        jPanel1.add(jTextFieldtutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 80, -1));
 
         jButton3.setText("ID Tutor ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +145,7 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 100, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 100, -1));
 
         jButtonmostrar.setText("MOSTRAR");
         jButtonmostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -134,17 +155,23 @@ public class JF_operaciones extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 110, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Mostrar Ingresos");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
-        jPanel1.add(jTextFieldfechainicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 80, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        jPanel1.add(jTextFieldfechainicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 80, -1));
 
-        jLabel5.setText("mostrar labores por fehca inicial ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
-        jPanel1.add(jTextField2FECHAINICIAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 90, -1));
-        jPanel1.add(jTextFieldfechafinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 90, -1));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Mostrar labores por fehca inicial ");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, 20));
+        jPanel1.add(jTextField2FECHAINICIAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 90, -1));
+        jPanel1.add(jTextFieldfechafinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 90, -1));
 
+        jLabel6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("AÑO - MES - DIA ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, -1, -1));
 
         jButton4.setText("MOSTRAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -152,10 +179,12 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 110, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 110, -1));
 
+        jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("AÑO - MES - DIA ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
 
         jButton5.setText("MOSTRAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +192,34 @@ public class JF_operaciones extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 90, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 90, -1));
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("OPERACIONES");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 220, 60));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6.jpeg"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,12 +232,69 @@ public class JF_operaciones extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void customizeButton(JButton button) {
+    button.setPreferredSize(new Dimension(200, 50));
+    button.setFocusPainted(false);
+    button.setBorderPainted(false);
+    button.setContentAreaFilled(false);
+    button.setOpaque(true); // Fondo no transparente
+
+    // Colores más fuertes
+    Color normalColor = new Color(100, 149, 237); // Azul claro fuerte
+    Color hoverColor = new Color(70, 130, 180); // Azul intermedio
+    Color pressColor = new Color(30, 60, 120); // Azul oscuro
+
+    // Establece el color inicial del fondo
+    button.setBackground(normalColor);
+    button.setForeground(Color.WHITE); // Texto en blanco
+    button.setFont(new Font("Arial", Font.BOLD, 16));
+
+    // Bordes redondeados usando 'setBorder' directamente
+    button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Borde negro
+
+    // Agregar efectos de cambio de color y sombra
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            // Efecto de cambio de color suave
+            button.setBackground(hoverColor); // Color cuando el cursor entra
+            button.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cambia el cursor
+
+            // Sombra dinámica
+            button.setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 3)); // Cambia el borde a más grueso
+        }
+
+        @Override
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            button.setBackground(normalColor); // Vuelve al color normal
+            button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Vuelve al borde normal
+        }
+
+        @Override
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            button.setBackground(pressColor); // Color cuando se presiona
+        }
+
+        @Override
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+            button.setBackground(hoverColor); // Vuelve al color de hover después de soltar
+        }
+    });
+}
+
+
+    
+    
+    
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         new JF_UE().setVisible(true);
@@ -291,7 +404,9 @@ public class JF_operaciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

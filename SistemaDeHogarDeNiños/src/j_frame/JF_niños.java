@@ -9,6 +9,12 @@ package j_frame;
  * @author byvagner
  */
 import clases.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 
 public class JF_niños extends javax.swing.JFrame {
      
@@ -27,6 +33,24 @@ public class JF_niños extends javax.swing.JFrame {
         }
         niñoss = this ;
         initComponents();
+        
+        
+        customizeButton(Eliminar);
+        customizeButton(Guardar);
+        customizeButton(Modificar);
+        customizeButton(Nuevo);
+        customizeButton(Tutor);
+        customizeButton(jButtonPersonal);
+        customizeButton(jButtonatras);
+        customizeButton(jButtonseleccionar);
+        customizeButton(jButtonseleccionarId);
+
+        
+        
+        
+        
+        
+        
         this.setLocationRelativeTo(null);
         n.MostrarNiños(jTableniños);
         this.logear();
@@ -45,18 +69,6 @@ public class JF_niños extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextNombre = new javax.swing.JTextField();
-        jTextApellido = new javax.swing.JTextField();
-        jTextFSexo = new javax.swing.JTextField();
-        jTextID = new javax.swing.JTextField();
-        jTextFEdad = new javax.swing.JTextField();
-        jTextFecha_Incial = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextIDTutor = new javax.swing.JTextField();
@@ -69,92 +81,50 @@ public class JF_niños extends javax.swing.JFrame {
         Eliminar = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
         jButtonseleccionar = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jTextFechaFinal = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableniños = new javax.swing.JTable();
         jButtonatras = new javax.swing.JButton();
         jButtonseleccionarId = new javax.swing.JButton();
         jLabetxtniños = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jTextID = new javax.swing.JTextField();
+        jTextNombre = new javax.swing.JTextField();
+        jTextApellido = new javax.swing.JTextField();
+        jTextFecha_Incial = new javax.swing.JTextField();
+        jTextFechaFinal = new javax.swing.JTextField();
+        jTextFSexo = new javax.swing.JTextField();
+        jTextFEdad = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("niños huerfano etc (ya lo ven ustedes que poner) ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
-
-        jTextNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNombreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 100, -1));
-
-        jTextApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextApellidoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 100, -1));
-
-        jTextFSexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFSexoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 40, -1));
-
-        jTextID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextIDActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 40, -1));
-
-        jTextFEdad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFEdadActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 50, -1));
-
-        jTextFecha_Incial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFecha_IncialActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFecha_Incial, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, -1));
-
-        jLabel2.setText("ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
-
-        jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
-
-        jLabel4.setText("Apellido");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        jLabel5.setText("Fecha Inicial ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
-
-        jLabel6.setText("Sexo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
-
-        jLabel7.setText("Edad");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel1.setText("NIÑOS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 100, 30));
 
         jLabel8.setText("Ci Secre");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
 
         jLabel9.setText("ID Tutor ");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, 20));
 
         jTextIDTutor.setEditable(false);
-        jPanel1.add(jTextIDTutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 60, -1));
+        jPanel1.add(jTextIDTutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 60, -1));
 
         jTextIDCIsecre.setEditable(false);
-        jPanel1.add(jTextIDCIsecre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 60, -1));
+        jPanel1.add(jTextIDCIsecre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 60, -1));
 
         jButtonPersonal.setText("Buscar Secre ");
         jButtonPersonal.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +132,7 @@ public class JF_niños extends javax.swing.JFrame {
                 jButtonPersonalActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 120, -1));
+        jPanel1.add(jButtonPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 110, -1));
 
         Tutor.setText("Buscar Tutor");
         Tutor.addActionListener(new java.awt.event.ActionListener() {
@@ -170,10 +140,12 @@ public class JF_niños extends javax.swing.JFrame {
                 TutorActionPerformed(evt);
             }
         });
-        jPanel1.add(Tutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 110, -1));
+        jPanel1.add(Tutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 110, -1));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 51));
         jLabel10.setText("Operaciones");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, 100, 20));
 
         Nuevo.setText("Nuevo ");
         Nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +153,7 @@ public class JF_niños extends javax.swing.JFrame {
                 NuevoActionPerformed(evt);
             }
         });
-        jPanel1.add(Nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 80, -1));
+        jPanel1.add(Nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 570, 80, -1));
 
         Guardar.setText("Guardar");
         Guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +161,7 @@ public class JF_niños extends javax.swing.JFrame {
                 GuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 80, -1));
+        jPanel1.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, 80, -1));
 
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +169,7 @@ public class JF_niños extends javax.swing.JFrame {
                 EliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 80, -1));
+        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, 80, -1));
 
         Modificar.setText("Modificar");
         Modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +177,7 @@ public class JF_niños extends javax.swing.JFrame {
                 ModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 110, -1));
+        jPanel1.add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 90, -1));
 
         jButtonseleccionar.setText("SELECCIONAR");
         jButtonseleccionar.addActionListener(new java.awt.event.ActionListener() {
@@ -213,11 +185,7 @@ public class JF_niños extends javax.swing.JFrame {
                 jButtonseleccionarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonseleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 120, -1));
-
-        jLabel12.setText("Fecha Final ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
-        jPanel1.add(jTextFechaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 90, -1));
+        jPanel1.add(jButtonseleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 120, -1));
 
         jTableniños.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -232,7 +200,7 @@ public class JF_niños extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableniños);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 760, 270));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 710, 270));
 
         jButtonatras.setText("atras");
         jButtonatras.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +208,7 @@ public class JF_niños extends javax.swing.JFrame {
                 jButtonatrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonatras, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 560, 90, -1));
+        jPanel1.add(jButtonatras, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, 100, 30));
 
         jButtonseleccionarId.setText("SELECCIONAR ID ");
         jButtonseleccionarId.addActionListener(new java.awt.event.ActionListener() {
@@ -248,18 +216,151 @@ public class JF_niños extends javax.swing.JFrame {
                 jButtonseleccionarIdActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonseleccionarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, 140, -1));
+        jPanel1.add(jButtonseleccionarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 140, -1));
         jPanel1.add(jLabetxtniños, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, 310, 30));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 130, 70));
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+
+        jTextID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIDActionPerformed(evt);
+            }
+        });
+
+        jTextNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNombreActionPerformed(evt);
+            }
+        });
+
+        jTextApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextApellidoActionPerformed(evt);
+            }
+        });
+
+        jTextFecha_Incial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFecha_IncialActionPerformed(evt);
+            }
+        });
+
+        jTextFSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFSexoActionPerformed(evt);
+            }
+        });
+
+        jTextFEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFEdadActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("ID");
+
+        jLabel3.setText("Nombre");
+
+        jLabel4.setText("Apellido");
+
+        jLabel5.setText("Fecha Inicial ");
+
+        jLabel12.setText("Fecha Final ");
+
+        jLabel6.setText("Sexo");
+
+        jLabel7.setText("Edad");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel5))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3))
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFEdad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFSexo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFechaFinal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFecha_Incial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel12))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addComponent(jTextID, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jLabel2))
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jLabel3))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel4))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFecha_Incial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap(130, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 260, 410));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6.jpeg"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -405,6 +506,64 @@ public class JF_niños extends javax.swing.JFrame {
         this.Limpiar();
     }//GEN-LAST:event_ModificarActionPerformed
 
+    
+    
+    private void customizeButton(JButton button) {
+    button.setPreferredSize(new Dimension(200, 50));
+    button.setFocusPainted(false);
+    button.setBorderPainted(false);
+    button.setContentAreaFilled(false);
+    button.setOpaque(true); // Fondo no transparente
+
+    // Colores más fuertes
+    Color normalColor = new Color(100, 149, 237); // Azul claro fuerte
+    Color hoverColor = new Color(70, 130, 180); // Azul intermedio
+    Color pressColor = new Color(30, 60, 120); // Azul oscuro
+
+    // Establece el color inicial del fondo
+    button.setBackground(normalColor);
+    button.setForeground(Color.WHITE); // Texto en blanco
+    button.setFont(new Font("Arial", Font.BOLD, 16));
+
+    // Bordes redondeados usando 'setBorder' directamente
+    button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Borde negro
+
+    // Agregar efectos de cambio de color y sombra
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            // Efecto de cambio de color suave
+            button.setBackground(hoverColor); // Color cuando el cursor entra
+            button.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cambia el cursor
+
+            // Sombra dinámica
+            button.setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 3)); // Cambia el borde a más grueso
+        }
+
+        @Override
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            button.setBackground(normalColor); // Vuelve al color normal
+            button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Vuelve al borde normal
+        }
+
+        @Override
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            button.setBackground(pressColor); // Color cuando se presiona
+        }
+
+        @Override
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+            button.setBackground(hoverColor); // Vuelve al color de hover después de soltar
+        }
+    });
+}
+
+
+    
+    
+    
+    
+    
     private void TutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TutorActionPerformed
         // TODO add your handling code here:
         new JF_tutor().setVisible(true);     
@@ -526,7 +685,9 @@ public class JF_niños extends javax.swing.JFrame {
     public static javax.swing.JButton jButtonseleccionarId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -537,6 +698,7 @@ public class JF_niños extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     public static javax.swing.JLabel jLabetxtniños;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableniños;
     private javax.swing.JTextField jTextApellido;

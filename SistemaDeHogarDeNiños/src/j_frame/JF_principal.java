@@ -7,6 +7,12 @@ package j_frame;
 import clases.*;
 import static j_frame.JF_login.txtpassword;
 import static j_frame.JF_login.txtuser;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +51,19 @@ public class JF_principal extends javax.swing.JFrame {
      
     public JF_principal() {
         initComponents();
+    customizeButton(jButton1);
+    customizeButton(jButtonCrearUsuario);
+    customizeButton(jButtonFormacion);
+    customizeButton(jButtonGestionarGrado);
+    customizeButton(jButtonGestionarTipoIngreso);
+    customizeButton(jButtonGestionararea);
+    customizeButton(jButtonGestionarue);
+    customizeButton(jButtonIngresos);
+    customizeButton(jButtonLabor);
+    customizeButton(jButtonNiños);
+    customizeButton(jButtonPersonal);
+    customizeButton(jButtontutor);
+    customizeButton(jButtonusuariGestionarPersonal);
         this.setLocationRelativeTo(null);
         this.Logear();
         System.out.println("->"+valiladorPrincipal);
@@ -71,7 +90,6 @@ public class JF_principal extends javax.swing.JFrame {
         jButtonIngresos = new javax.swing.JButton();
         jButtonFormacion = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
@@ -86,6 +104,8 @@ public class JF_principal extends javax.swing.JFrame {
         jButtonGestionarue = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButtonPersonal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabelID.setText("Ci");
 
@@ -99,7 +119,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonNiñosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonNiños, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 150, -1));
+        jPanel1.add(jButtonNiños, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 150, -1));
 
         jButtonusuariGestionarPersonal.setText("Gestionar Personal ");
         jButtonusuariGestionarPersonal.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +127,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonusuariGestionarPersonalActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonusuariGestionarPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 180, -1));
+        jPanel1.add(jButtonusuariGestionarPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 180, -1));
 
         jButtonLabor.setText("Ver labores");
         jButtonLabor.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +135,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonLaborActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonLabor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 150, -1));
+        jPanel1.add(jButtonLabor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 150, -1));
 
         jButtonIngresos.setText("Ver Ingresos");
         jButtonIngresos.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +143,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonIngresosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonIngresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 150, -1));
+        jPanel1.add(jButtonIngresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 150, -1));
 
         jButtonFormacion.setText("Ver Formacion ");
         jButtonFormacion.addActionListener(new java.awt.event.ActionListener() {
@@ -131,13 +151,10 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonFormacionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonFormacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 150, -1));
+        jPanel1.add(jButtonFormacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 150, -1));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 20, 600));
-
-        jLabel2.setText("aca decorarr");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 90, 120));
 
         jButton1.setText("volver ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -147,17 +164,25 @@ public class JF_principal extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 540, 100, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("Personal Ingresado :");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, -1, -1));
 
+        jLabelNombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(0, 0, 51));
         jLabelNombre.setText("nombre");
-        jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, -1, -1));
+        jPanel1.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, -1, -1));
 
+        jLabelTipo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelTipo.setForeground(new java.awt.Color(0, 0, 51));
         jLabelTipo.setText("tipo");
-        jPanel1.add(jLabelTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, -1));
+        jPanel1.add(jLabelTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, -1, -1));
 
+        jLabelCorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelCorreo.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCorreo.setText("correo");
-        jPanel1.add(jLabelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, -1, -1));
+        jPanel1.add(jLabelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, -1, -1));
 
         jButtonCrearUsuario.setText("Crear Usuario");
         jButtonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -165,10 +190,12 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonCrearUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 140, 30));
+        jPanel1.add(jButtonCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 140, 30));
 
-        jLabelDirectora.setText("Bienvenido!!!");
-        jPanel1.add(jLabelDirectora, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, -1, -1));
+        jLabelDirectora.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelDirectora.setForeground(new java.awt.Color(0, 0, 102));
+        jLabelDirectora.setText("BIENVENIDO!");
+        jPanel1.add(jLabelDirectora, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 200, 50));
 
         jButtontutor.setText("Ver tutor");
         jButtontutor.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +203,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtontutorActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtontutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 150, -1));
+        jPanel1.add(jButtontutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, -1));
 
         jButtonGestionararea.setText("Gestionar area");
         jButtonGestionararea.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +211,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonGestionarareaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGestionararea, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 180, -1));
+        jPanel1.add(jButtonGestionararea, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, -1));
 
         jButtonGestionarTipoIngreso.setText("Gestionar Tipo Ingresos");
         jButtonGestionarTipoIngreso.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +219,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonGestionarTipoIngresoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGestionarTipoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 180, -1));
+        jPanel1.add(jButtonGestionarTipoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 180, -1));
 
         jButtonGestionarGrado.setText("Gestionar Grado");
         jButtonGestionarGrado.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +227,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonGestionarGradoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGestionarGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 180, -1));
+        jPanel1.add(jButtonGestionarGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 180, -1));
 
         jButtonGestionarue.setText("Gestionar Unidad Educativa");
         jButtonGestionarue.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +235,7 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonGestionarueActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGestionarue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 180, -1));
+        jPanel1.add(jButtonGestionarue, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 180, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 1000, -1));
 
         jButtonPersonal.setText("Ver Personal");
@@ -217,7 +244,13 @@ public class JF_principal extends javax.swing.JFrame {
                 jButtonPersonalActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 150, -1));
+        jPanel1.add(jButtonPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 150, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 440, 330));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6.jpeg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -259,6 +292,22 @@ public class JF_principal extends javax.swing.JFrame {
                break;
        }
    }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public void LoginDirectora(){
        //los jlabel 
        usu.validarUserLogeado(valiladorPrincipal, principal.jLabelID, principal.jLabelNombre, principal.jLabelTipo, principal.jLabelCorreo);
@@ -270,6 +319,60 @@ public class JF_principal extends javax.swing.JFrame {
    public void LoginSecretarias(){
        usu.validarUserLogeado(valiladorPrincipal, principal.jLabelID, principal.jLabelNombre, principal.jLabelTipo, principal.jLabelCorreo);
    }
+   
+   private void customizeButton(JButton button) {
+    button.setPreferredSize(new Dimension(200, 50));
+    button.setFocusPainted(false);
+    button.setBorderPainted(false);
+    button.setContentAreaFilled(false);
+    button.setOpaque(true); // Fondo no transparente
+
+    // Colores más fuertes
+    Color normalColor = new Color(100, 149, 237); // Azul claro fuerte
+    Color hoverColor = new Color(70, 130, 180); // Azul intermedio
+    Color pressColor = new Color(30, 60, 120); // Azul oscuro
+
+    // Establece el color inicial del fondo
+    button.setBackground(normalColor);
+    button.setForeground(Color.WHITE); // Texto en blanco
+    button.setFont(new Font("Arial", Font.BOLD, 16));
+
+    // Bordes redondeados usando 'setBorder' directamente
+    button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Borde negro
+
+    // Agregar efectos de cambio de color y sombra
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            // Efecto de cambio de color suave
+            button.setBackground(hoverColor); // Color cuando el cursor entra
+            button.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cambia el cursor
+
+            // Sombra dinámica
+            button.setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 3)); // Cambia el borde a más grueso
+        }
+
+        @Override
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            button.setBackground(normalColor); // Vuelve al color normal
+            button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Vuelve al borde normal
+        }
+
+        @Override
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            button.setBackground(pressColor); // Color cuando se presiona
+        }
+
+        @Override
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+            button.setBackground(hoverColor); // Vuelve al color de hover después de soltar
+        }
+    });
+}
+
+   
+   
+   
    
     private void jButtonNiñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNiñosActionPerformed
 
@@ -410,6 +513,7 @@ public class JF_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPersonal;
     private javax.swing.JButton jButtontutor;
     public static javax.swing.JButton jButtonusuariGestionarPersonal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public static javax.swing.JLabel jLabelCorreo;

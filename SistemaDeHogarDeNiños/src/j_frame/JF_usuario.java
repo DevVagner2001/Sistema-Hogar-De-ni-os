@@ -9,6 +9,12 @@ package j_frame;
  * @author byvagner
  */
 import clases.usuario;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 
 public class JF_usuario extends javax.swing.JFrame {
    
@@ -23,6 +29,13 @@ public class JF_usuario extends javax.swing.JFrame {
         }
         OficialUsu = this ;
         initComponents();
+        customizeButton(jButton1);
+        customizeButton(jButton2);
+        customizeButton(jButton3);
+        customizeButton(jButton4);
+        customizeButton(jButton5);
+        customizeButton(jButton6);
+        customizeButton(jButton7);
         this.setLocationRelativeTo(null);
         u.MostrarJtableTI(jTableusuario);
     }
@@ -40,15 +53,6 @@ public class JF_usuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextFieldUSER = new javax.swing.JTextField();
-        jTextFieldPASSWORD = new javax.swing.JTextField();
-        jTextFieldIDPERSONAL = new javax.swing.JTextField();
-        jTextFieldID = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableusuario = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
@@ -59,44 +63,27 @@ public class JF_usuario extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jButton7 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldID = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldPASSWORD = new javax.swing.JTextField();
+        jTextFieldIDPERSONAL = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldUSER = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("adminitrador de usuarios");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
-
-        jLabel2.setText("id");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
-
-        jLabel3.setText("user");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-
-        jLabel4.setText("password");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
-
-        jLabel5.setText("personal");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
-        jPanel1.add(jTextFieldUSER, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 140, -1));
-        jPanel1.add(jTextFieldPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 150, -1));
-
-        jTextFieldIDPERSONAL.setEditable(false);
-        jTextFieldIDPERSONAL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIDPERSONALActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldIDPERSONAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 80, -1));
-        jPanel1.add(jTextFieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 40, -1));
-
-        jButton1.setText("tabla personal ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
+        jLabel1.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("ADMINISTRADOR DE USUARIOS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 370, 50));
 
         jTableusuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -111,7 +98,7 @@ public class JF_usuario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableusuario);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 630, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 630, 190));
 
         jButton2.setText("nuevo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +106,7 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 80, 30));
 
         jButton3.setText("guardar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +114,7 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 80, 30));
 
         jButton4.setText("modificar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +122,7 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 90, 30));
 
         jButton5.setText("eliminar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +130,7 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 80, 30));
 
         jButton6.setText("SELECCIONAR ");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -151,11 +138,11 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 130, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 140, 30));
 
         jScrollPane2.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1010, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1000, -1));
 
         jButton7.setText("atras");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +150,64 @@ public class JF_usuario extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 490, 80, -1));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 500, 90, 40));
+
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(0, 204, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(153, 153, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("ID");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 30, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("USER");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextFieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 40, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("PASSWORD");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel2.add(jTextFieldPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 150, -1));
+
+        jTextFieldIDPERSONAL.setEditable(false);
+        jTextFieldIDPERSONAL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDPERSONALActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextFieldIDPERSONAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 80, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("PERSONAL");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+        jPanel2.add(jTextFieldUSER, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 140, -1));
+
+        jButton1.setText("tabla personal ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 290, 250));
+
+        jLabel6.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/6.jpeg"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,11 +250,68 @@ public class JF_usuario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
        this.limpiar();
-        
+      
         
     }//GEN-LAST:event_jButton2ActionPerformed
+private void customizeButton(JButton button) {
+    button.setPreferredSize(new Dimension(200, 50));
+    button.setFocusPainted(false);
+    button.setBorderPainted(false);
+    button.setContentAreaFilled(false);
+    button.setOpaque(true); // Fondo no transparente
 
+    // Colores más fuertes
+    Color normalColor = new Color(100, 149, 237); // Azul claro fuerte
+    Color hoverColor = new Color(70, 130, 180); // Azul intermedio
+    Color pressColor = new Color(30, 60, 120); // Azul oscuro
+
+    // Establece el color inicial del fondo
+    button.setBackground(normalColor);
+    button.setForeground(Color.WHITE); // Texto en blanco
+    button.setFont(new Font("Arial", Font.BOLD, 16));
+
+    // Bordes redondeados usando 'setBorder' directamente
+    button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Borde negro
+
+    // Agregar efectos de cambio de color y sombra
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            // Efecto de cambio de color suave
+            button.setBackground(hoverColor); // Color cuando el cursor entra
+            button.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cambia el cursor
+
+            // Sombra dinámica
+            button.setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 3)); // Cambia el borde a más grueso
+        }
+
+        @Override
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            button.setBackground(normalColor); // Vuelve al color normal
+            button.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 2)); // Vuelve al borde normal
+        }
+
+        @Override
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            button.setBackground(pressColor); // Color cuando se presiona
+        }
+
+        @Override
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+            button.setBackground(hoverColor); // Vuelve al color de hover después de soltar
+        }
+    });
+}
+
+
+    
+    
+    
+    
+    
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    
         // TODO add your handling code here:
         u.setId_u(jTextFieldID.getText());
         u.setUsername(jTextFieldUSER.getText());
@@ -266,6 +367,10 @@ public class JF_usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIDPERSONALActionPerformed
 
+    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,7 +420,9 @@ public class JF_usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableusuario;
